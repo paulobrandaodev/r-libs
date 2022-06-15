@@ -84,6 +84,14 @@ starwars %>%
 starwars %>%  dplyr::filter(species == 'Chagrian') %>%  View()
 
 
+# -----------------------------------------------------------------
+# -----------------------------------------------------------------
+# JOINS - Left Join
+base <- data.frame(sex = c("male",
+                           "female"), idsex = 0:1 )
+
+left_join(starwars, base, by = c('gender'='sex')) %>% View()
+
 
 
 

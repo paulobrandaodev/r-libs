@@ -42,6 +42,15 @@ mutate(imdb,
        ) %>% 
       select(-lucro) %>% 
   View()
+
+# Joins 1
+nota_m = imdb %>% group_by(diretor) %>% 
+  mutate(nota_imdb_media = mean(nota_imdb)) %>% 
+  select(diretor, nota_imdb_media)
+  
+
+left_join(imdb, nota_m, by='diretor') %>% View()
+
     
         
 
